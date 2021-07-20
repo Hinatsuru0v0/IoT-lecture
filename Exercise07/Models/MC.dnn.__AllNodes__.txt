@@ -1,0 +1,17 @@
+ 
+b=LearnableParameter [3,1]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ 7.50936747 
+ -6.95867634 
+ -0.446926802 
+ #################################################################### 
+ce=CrossEntropyWithSoftmax ( labels , z ) 
+errs=ClassificationError ( labels , z ) 
+features=InputValue [ 2 ] 
+labels=InputValue [ 3 ] 
+w=LearnableParameter [3,2]   learningRateMultiplier=1.000000  NeedsGradient=true 
+ -2.17543745 -1.1709938 
+ 1.16014016 2.24607778 
+ 0.937452137 -1.0967561 
+ #################################################################### 
+z=Plus ( z.PlusArgs[0] , b ) 
+z.PlusArgs[0]=Times ( w , features )
